@@ -2,6 +2,7 @@ import Head from "next/head";
 import Footer from "./Footer";
 import Menu from "./Menu";
 import styles from "../styles/MainLayout.module.css";
+import { Container } from "@mui/material";
 
 function MainLayout({ children }) {
   return (
@@ -14,7 +15,10 @@ function MainLayout({ children }) {
         </Head>
       </Head>
       <Menu />
-      <main className={styles.main}>{children}</main>
+      <Container maxWidth="sm">
+        <main className={styles.main}>{children}</main>
+      </Container>
+
       <Footer />
     </>
   );
